@@ -1,0 +1,40 @@
+#pragma once
+#include <Arduino.h>
+
+// #define DEBUG
+
+#ifdef DEBUG
+#define DEBUG_PRINT(x)  Serial.println(x)
+#else
+#define DEBUG_PRINT(x)
+#endif
+
+
+/* Variables */
+// BCG Value
+#define BCG_START_PACKET 127
+#define BCG_PACKET_SIZE 24
+#define BCG_DATA_COUNT_MAX 128
+#define BCG_DATA_QUEUE_ONE_SIZE 13
+#define BCG_DATA_QUEUE_DATA_COUNT 8
+#define BCG_DATA_UDP_DATA_SEND_COUNT BCG_DATA_COUNT_MAX * BCG_DATA_QUEUE_DATA_COUNT
+#define BCG_PACKET_SIZE_MESSEGE_QUEUE 1 + (BCG_DATA_QUEUE_ONE_SIZE * BCG_DATA_COUNT_MAX)
+
+// RTOS
+#define PRIORITY_MAIN_TASK 1
+#define PRIORITY_BCG_TASK 1
+
+#define DATA_QUEUE_LENGTH   20
+
+// mac address
+#define MAC_ADDRESS_LENGTH 6
+
+//udp
+#define UDP_SERVER_IP   "4.230.16.50"
+#define UDP_SERVER_PORT 3336
+
+#define UDP_HEADER_SIZE 2
+#define UDP_TAIL_SIZE 2
+#define UDP_TIME_STEMP_SIZE 8
+#define UDP_WIFI_MAC_ADDRESS_SIZE 6
+
